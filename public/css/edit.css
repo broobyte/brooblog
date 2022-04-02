@@ -1,0 +1,136 @@
+/*--------
+    GLOBAL
+----------*/
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins";
+}
+
+:root {
+  --BGprimaryDark: rgb(31, 31, 31);
+  --BGsecondaryDark: rgb(63, 63, 63);
+  --BGprimaryLight: rgb(241, 243, 245);
+  --BGsecondaryLight: white;
+  --Textdark: white;
+  --Textlight: rgb(31, 31, 31);
+  --Disabled: rgb(150, 150, 150);
+  --Tertiary: indianred;
+  --Boxshadow: 5px 5px 5px rgba(0, 0, 0, 0.13);
+}
+
+body {
+  height: max-content;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--BGprimaryLight);
+}
+
+/*-----------
+    SELECTORS
+-------------*/
+
+#editForm {
+  height: 80vh;
+  width: 50vw;
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  text-align: center;
+  gap: 20px;
+}
+
+#editHeaderTitle {
+  font-size: 48px;
+  font-weight: 200;
+}
+
+#editTitle,
+#editDescription {
+  height: 100px;
+  width: 80%;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  background-color: var(--BGsecondaryLight);
+  gap: 10px;
+  box-shadow: var(--Boxshadow);
+}
+
+#editTitle > p,
+#editDescription > p {
+  height: 50%;
+  width: 15%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(241, 243, 245, 0.5);
+  color: var(--Disabled);
+  border-radius: 5px;
+  font-size: 14px;
+  font-weight: 300;
+  box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.13);
+}
+
+#editTitle > span,
+#editDescription > span {
+  color: var(--Disabled);
+  font-weight: 300;
+}
+
+#editTitle > input,
+#editDescription > input {
+  height: 80%;
+  width: 75%;
+  border: none;
+  font-size: 20px;
+  font-weight: 300;
+}
+
+#editTitle > input:focus,
+#editDescription > input:focus {
+  outline: none;
+}
+
+#editContent {
+  width: 100%;
+}
+
+#editContent > textarea {
+  height: 300px;
+  width: 100%;
+  padding: 10px;
+  border: none;
+  font-size: 16px;
+  font-weight: 300;
+  box-shadow: var(--Boxshadow);
+  resize: none;
+}
+
+#editContent > textarea:focus {
+  font-size: 16px;
+  outline: none;
+}
+
+#editHeaderSubmit {
+  height: 75px;
+  width: 150px;
+  background: linear-gradient(to bottom, indianred, rgba(205, 92, 92, 0.8));
+  color: var(--Textdark);
+  border-radius: 5px;
+  border: none;
+  font-size: 30px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+/*---------------
+    MEDIA QUERIES
+-----------------*/

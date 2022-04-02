@@ -1,0 +1,188 @@
+/*--------
+    GLOBAL
+----------*/
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins";
+}
+
+:root {
+  --BGprimaryDark: rgb(31, 31, 31);
+  --BGsecondaryDark: rgb(63, 63, 63);
+  --BGprimaryLight: rgb(241, 243, 245);
+  --BGsecondaryLight: white;
+  --Textdark: white;
+  --Textlight: rgb(31, 31, 31);
+  --Disabled: rgb(150, 150, 150);
+  --Tertiary: indianred;
+  --Boxshadow: 5px 5px 5px rgba(0, 0, 0, 0.13);
+}
+
+body {
+  height: max-content;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--BGprimaryLight);
+  color: var(--Textlight);
+  transition: all 0.2s;
+}
+
+/*-----------
+    SELECTORS
+-------------*/
+
+/* Header */
+
+#indexHeader {
+  height: 30vh;
+  width: 50vw;
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  text-align: center;
+}
+
+#indexTitle {
+  font-size: 48px;
+  font-weight: 200;
+}
+
+#indexSubtitle {
+  font-size: 16px;
+  font-weight: 300;
+}
+
+#indexSubtitle > a {
+  color: var(--Tertiary);
+  text-decoration: none;
+}
+
+#indexSubtitle > a:hover {
+  text-decoration: underline;
+}
+
+/* Recent */
+
+#indexRecent {
+  height: max-content;
+  width: 40vw;
+  margin-bottom: 30px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+}
+
+#indexRecent > a {
+  height: 50px;
+  width: 150px;
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(to bottom, indianred, rgba(205, 92, 92, 0.8));
+  border-radius: 5px;
+  text-decoration: none;
+  box-shadow: var(--Boxshadow);
+}
+
+#indexRecent > a:hover {
+  filter: brightness(85%);
+  cursor: pointer;
+}
+
+#indexRecent > a:nth-child(3n + 1) {
+  background: linear-gradient(to bottom, SlateBlue, rgb(85, 75, 185));
+}
+
+#indexRecent > a:nth-child(3n + 2) {
+  background: linear-gradient(to bottom, LightSeaGreen, rgb(12, 158, 151));
+}
+
+#indexRecent > a:nth-child(3n + 3) {
+  background: linear-gradient(to bottom, SlateGray, rgb(92, 108, 124));
+}
+
+#indexRecentTitle {
+  color: var(--Textdark);
+  font-size: 14px;
+  font-weight: 500;
+}
+
+/* All */
+
+#indexAll {
+  height: max-content;
+  width: 40vw;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+#indexAllTitle {
+  width: 100%;
+  padding-bottom: 20px;
+  color: var(--Tertiary);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.11);
+  font-size: 16px;
+  font-weight: 300;
+}
+
+#indexAllList {
+  height: max-content;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 10px;
+}
+
+#indexAllListTitle {
+  width: 32%;
+  color: var(--Textlight);
+  text-decoration: none;
+}
+
+#indexAllListTitle:hover {
+  text-decoration: underline;
+}
+
+#indexAllList > a > h3 {
+  font-size: 14px;
+  font-weight: 300;
+}
+
+/*---------------
+    MEDIA QUERIES
+-----------------*/
+
+@media only screen and (max-width: 500px) {
+  #indexHeader {
+    width: 90%;
+  }
+
+  #indexRecent {
+    width: 90%;
+  }
+
+  #indexAll {
+    width: 90%;
+  }
+
+  #indexAllListTitle {
+    text-align: center;
+  }
+}

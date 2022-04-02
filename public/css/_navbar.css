@@ -1,0 +1,84 @@
+/*--------
+    GLOBAL
+----------*/
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins";
+}
+
+:root {
+  --BGprimaryDark: rgb(31, 31, 31);
+  --BGsecondaryDark: rgb(63, 63, 63);
+  --BGprimaryLight: rgb(241, 243, 245);
+  --BGsecondaryLight: white;
+  --Textdark: white;
+  --Textlight: rgb(31, 31, 31);
+  --Disabled: rgb(150, 150, 150);
+  --Tertiary: indianred;
+  --Boxshadow: 5px 5px 5px rgba(0, 0, 0, 0.13);
+}
+
+nav {
+  height: 10vh;
+  width: 100vw;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  transition: all 0.2s;
+}
+
+nav > a,
+nav > h1,
+nav > ul {
+  width: 33%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  list-style-type: none;
+  text-decoration: none;
+  cursor: default;
+}
+
+nav > a > i::before,
+nav > ul > a {
+  color: var(--Tertiary);
+  font-size: 20px;
+  cursor: pointer;
+}
+
+nav > a:hover {
+  text-decoration: none;
+}
+
+nav > ul {
+  justify-content: space-evenly;
+}
+
+nav > h1 {
+  font-size: 16px;
+  font-weight: 300;
+}
+
+/*---------------
+    MEDIA QUERIES
+-----------------*/
+
+@media only screen and (max-width: 500px) {
+  nav > ul {
+    width: 100%;
+  }
+
+  nav > h1 {
+    display: none;
+  }
+}
+
+@media only screen and (max-height: 600px) {
+  nav {
+    height: 20vh;
+  }
+}

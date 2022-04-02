@@ -1,0 +1,96 @@
+/*--------
+    GLOBAL
+----------*/
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins";
+}
+
+:root {
+  --BGprimaryDark: rgb(31, 31, 31);
+  --BGsecondaryDark: rgb(63, 63, 63);
+  --BGprimaryLight: rgb(241, 243, 245);
+  --BGsecondaryLight: white;
+  --Textdark: white;
+  --Textlight: rgb(31, 31, 31);
+  --Disabled: rgb(150, 150, 150);
+  --Tertiary: indianred;
+  --Boxshadow: 5px 5px 5px rgba(0, 0, 0, 0.13);
+}
+
+body {
+  height: max-content;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--BGprimaryLight);
+  gap: 30px;
+}
+
+/*-----------
+    SELECTORS
+-------------*/
+
+#editListHeaderTitle {
+  font-size: 48px;
+  font-weight: 200;
+}
+
+#editList {
+  height: max-content;
+  width: 40vw;
+  margin-bottom: 30px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+}
+
+#editList > a {
+  height: 50px;
+  width: 150px;
+  display: flex;
+  align-items: center;
+  background: linear-gradient(to bottom, indianred, rgba(205, 92, 92, 0.8));
+  border-radius: 5px;
+  text-decoration: none;
+  box-shadow: var(--Boxshadow);
+}
+
+#editList > a:hover {
+  filter: brightness(85%);
+  cursor: pointer;
+}
+
+#editList > a:nth-child(3n + 1) {
+  background: linear-gradient(to bottom, SlateBlue, rgb(85, 75, 185));
+}
+
+#editList > a:nth-child(3n + 2) {
+  background: linear-gradient(to bottom, LightSeaGreen, rgb(12, 158, 151));
+}
+
+#editList > a:nth-child(3n + 3) {
+  background: linear-gradient(to bottom, SlateGray, rgb(92, 108, 124));
+}
+
+#editListButton {
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0);
+  color: var(--Textdark);
+  border: none;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+/*---------------
+    MEDIA QUERIES
+-----------------*/

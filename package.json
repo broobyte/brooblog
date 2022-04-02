@@ -1,0 +1,26 @@
+{
+  "name": "blog",
+  "version": "1.0.0",
+  "description": "A simple blog made by Brook Nash.",
+  "main": "server.js",
+  "scripts": {
+    "start": "nodemon server.js"
+  },
+  "keywords": [],
+  "author": "Brook Nash",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^5.0.1",
+    "dompurify": "^2.3.6",
+    "dotenv": "^16.0.0",
+    "ejs": "^3.1.6",
+    "express": "^4.17.3",
+    "express-session": "^1.17.2",
+    "jsdom": "^19.0.0",
+    "marked": "^4.0.12",
+    "method-override": "^3.0.0",
+    "mongoose": "^6.2.8",
+    "nodemon": "^2.0.15",
+    "slugify": "^1.6.5"
+  }
+}
