@@ -74,4 +74,7 @@ app.post("/login", async (req, res) => {
   }
 });
 
-app.listen(3000, console.log("Server is initiated at | http://localhost:3000"));
+app.listen(
+  process.env.PORT || 3000,
+  console.log("Server is initiated at | http://localhost:3000")
+);
