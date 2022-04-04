@@ -33,6 +33,11 @@ body {
   transition: all 0.2s;
 }
 
+footer {
+  position: fixed;
+  bottom: 0;
+}
+
 /*-----------
     SELECTORS
 -------------*/
