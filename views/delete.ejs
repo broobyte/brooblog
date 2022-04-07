@@ -20,7 +20,11 @@
   </head>
   <body>
     <%- include('_navbar'); %>
+
+    <!--TITLE-->
     <h1 id="deleteHeaderTitle">Delete article</h1>
+
+    <!--LIST-->
     <section id="deleteList">
       <% articles.forEach(article => { %>
       <form action="/article/<%= article.id %>?_method=DELETE" method="POST">

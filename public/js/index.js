@@ -6,7 +6,11 @@
 const toggle = document.getElementById("toggle");
 const indexAllTitle = document.getElementById("indexAllTitle");
 const indexRecentTitle = document.querySelectorAll("#indexRecentTitle");
-const indexAllListTitle = document.querySelectorAll("#indexAllListTitle");
+const indexSearchWrapper = document.getElementById("indexSearchWrapper");
+const indexSearchInput = document.getElementById("indexSearchInput");
+const indexSearchIcon = document.getElementById("indexSearchIcon");
+const indexSearchResults = document.getElementById("indexSearchResults");
+const indexSearchItems = indexSearchResults.getElementsByTagName("li");
 
 /*---------
     GLOBALS
@@ -32,7 +36,7 @@ toggle.addEventListener("click", () => {
     FUNCTIONS
 -------------*/
 
-// Set theme.
+// Theme logic.
 function theme(val) {
   if (val === "light") {
     localStorage.setItem("theme", "light");
@@ -47,6 +51,17 @@ function theme(val) {
     for (let i = 0; i < indexAllListTitle.length; i++) {
       indexAllListTitle[i].style.color = "var(--Textlight)";
     }
+    indexSearchWrapper.style.backgroundColor = "var(--BGprimaryLight)";
+    indexSearchWrapper.style.color = "var(--Textlight)";
+    indexSearchWrapper.style.border = "1px solid var(--BGprimaryDark)";
+    indexSearchInput.style.color = "var(--Textlight)";
+    indexSearchIcon.style.color = "var(--Textlight)";
+    for (let i = 0; i < indexSearchItems.length; i++) {
+      let tag = indexSearchItems[i].getElementsByTagName("a")[0];
+      tag.style.backgroundColor = "var(--BGprimaryLight)";
+      tag.style.color = "var(--Textlight)";
+      tag.style.border = "1px solid var(--BGprimaryDark)";
+    }
   } else if (val === "dark") {
     localStorage.setItem("theme", "dark");
 
@@ -59,21 +74,38 @@ function theme(val) {
     for (let i = 0; i < indexAllListTitle.length; i++) {
       indexAllListTitle[i].style.color = "var(--Textdark)";
     }
+    indexSearchWrapper.style.backgroundColor = "var(--BGprimaryDark)";
+    indexSearchWrapper.style.color = "var(--Textdark)";
+    indexSearchWrapper.style.border = "1px solid var(--BGprimaryLight)";
+    indexSearchInput.style.color = "var(--Textdark)";
+    indexSearchIcon.style.color = "var(--Textdark)";
+    for (let i = 0; i < indexSearchItems.length; i++) {
+      let tag = indexSearchItems[i].getElementsByTagName("a")[0];
+      tag.style.backgroundColor = "var(--BGprimaryDark)";
+      tag.style.color = "var(--Textdark)";
+      tag.style.border = "1px solid var(--BGprimaryLight)";
+    }
   }
 }
 
-// Animate elements.
-function animate(el, animation, delay, speed, repeat) {
-  el.classList.add("animate__animated");
-  el.classList.add(`animate__${animation}`);
-  el.classList.add(`animate__${delay}`);
-  el.classList.add(`animate__${speed}`);
-  el.classList.add(`animate__${repeat}`);
-  el.addEventListener("animationend", () => {
-    el.classList.remove("animate__animated");
-    el.classList.remove(`animate__${animation}`);
-    el.classList.remove(`animate__${delay}`);
-    el.classList.remove(`animate__${speed}`);
-    el.classList.remove(`animate__${repeat}`);
-  });
+// Search logic.
+function searchQuery() {
+  indexSearchResults.style.display = "block"; // Show element.
+
+  // Empty input.
+  if (indexSearchInput.value == "") {
+    indexSearchResults.style.display = "none";
+  }
+
+  // Iterate over articles.
+  for (let i = 0; i < indexSearchItems.length; i++) {
+    let tag = indexSearchItems[i].getElementsByTagName("a")[0]; // Inner a tag.
+    let val = tag.textContent || tag.innerText;
+
+    if (val.toUpperCase().indexOf(indexSearchInput.value.toUpperCase()) > -1) {
+      indexSearchItems[i].style.display = "";
+    } else {
+      indexSearchItems[i].style.display = "none";
+    }
+  }
 }

@@ -9,3 +9,7 @@ Used to discuss what I am learning, struggling with or finding interesting in gr
 ## Getting Started 🤷‍♂️
 
 [Blog](http://www.brooblog.co.uk)
+
+## Changelog 📊
+
+- [07/04/2022] **Implemented search functionality**

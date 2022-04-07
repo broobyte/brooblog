@@ -55,19 +55,3 @@ function theme(val) {
     viewContent.style.color = "var(--Textdark)";
   }
 }
-
-// Animate elements.
-function animate(el, animation, delay, speed, repeat) {
-  el.classList.add("animate__animated");
-  el.classList.add(`animate__${animation}`);
-  el.classList.add(`animate__${delay}`);
-  el.classList.add(`animate__${speed}`);
-  el.classList.add(`animate__${repeat}`);
-  el.addEventListener("animationend", () => {
-    el.classList.remove("animate__animated");
-    el.classList.remove(`animate__${animation}`);
-    el.classList.remove(`animate__${delay}`);
-    el.classList.remove(`animate__${speed}`);
-    el.classList.remove(`animate__${repeat}`);
-  });
-}

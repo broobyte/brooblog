@@ -74,6 +74,68 @@ footer {
   text-decoration: underline;
 }
 
+#indexSearch {
+  position: relative;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#indexSearchWrapper {
+  height: 50px;
+  width: 80%;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--BGprimaryLight);
+  color: var(--Textlight);
+  box-shadow: var(--Boxshadow);
+}
+
+#indexSearchInput {
+  height: 100%;
+  width: 80%;
+  background: none;
+  color: var(--Textlight);
+  border: none;
+  font-size: 20px;
+  font-weight: 300;
+}
+
+#indexSearchInput:focus {
+  outline: none;
+}
+
+#indexSearchIcon {
+  font-size: 20px;
+}
+
+#indexSearchResults {
+  position: absolute;
+  width: 80%;
+  top: 100%;
+  display: none;
+  text-align: start;
+  list-style-type: none;
+  z-index: 1000;
+}
+
+#indexSearchResults > li > a {
+  padding: 12px;
+  margin-top: -1px;
+  display: block;
+  font-size: 16px;
+  font-weight: 300;
+  text-decoration: none;
+}
+
+#indexSearchResults > li > a:hover {
+  filter: brightness(95%);
+}
+
 /* Recent */
 
 #indexRecent {

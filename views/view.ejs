@@ -43,6 +43,8 @@
   </head>
   <body>
     <%- include('_navbar'); %>
+
+    <!--MAIN-->
     <main id="view">
       <h1 id="viewTitle"><%= article.title %></h1>
       <h2 id="viewSubtitle"><%= article.description %></h2>
@@ -52,6 +54,7 @@
       >
       <section id="viewContent"><%- article.sanitisedHTML %></section>
     </main>
+
     <%- include('_footer'); %>
     <!--JS-->
     <script src="/js/view.js"></script>

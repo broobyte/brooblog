@@ -20,7 +20,11 @@
   </head>
   <body>
     <%- include('_navbar'); %>
+
+    <!--TITLE-->
     <h1 id="editListHeaderTitle">Edit article</h1>
+
+    <!--LIST-->
     <section id="editList">
       <% articles.forEach(article => { %>
       <a href="/article/edit/<%= article.id %>">

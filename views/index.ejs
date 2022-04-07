@@ -42,14 +42,38 @@
   </head>
   <body>
     <%- include('_navbar'); %>
+
+    <!--HEADER-->
     <section id="indexHeader">
+      <!--CSS-->
       <h1 id="indexTitle">Brook Nash</h1>
       <h2 id="indexSubtitle">
         Hey! I'm
         <a href="https://twitter.com/broobyte" target="_blank">@broobyte</a> and
         this is a place for me to talk about my software findings.
       </h2>
+      <!--SEARCH-->
+      <section id="indexSearch">
+        <div id="indexSearchWrapper">
+          <input
+            type="text"
+            placeholder="Search..."
+            id="indexSearchInput"
+            onkeyup="searchQuery()"
+          />
+          <i class="fa-solid fa-magnifying-glass" id="indexSearchIcon"></i>
+        </div>
+        <ul id="indexSearchResults">
+          <% articles.forEach(article => { %>
+          <li>
+            <a href="article/<%= article.slug %>"><%= article.title %></a>
+          </li>
+          <% }) %>
+        </ul>
+      </section>
     </section>
+
+    <!--RECENT-->
     <section id="indexRecent">
       <% articles.forEach(article => { %>
       <a href="article/<%= article.slug %>"
@@ -59,6 +83,8 @@
       >
       <% }) %>
     </section>
+
+    <!--ALL-->
     <section id="indexAll">
       <h1 id="indexAllTitle">All Articles</h1>
       <section id="indexAllList">
@@ -69,6 +95,7 @@
         <% }) %>
       </section>
     </section>
+
     <%- include('_footer'); %>
     <!--JS-->
     <script src="/js/index.js"></script>
