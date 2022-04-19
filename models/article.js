@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
-const marked = require("marked"); // Markdown conversion.
-const slugify = require("slugify"); // URL slugs.
-const createDomPurify = require("dompurify"); // HTML security.
+const marked = require("marked");
+const slugify = require("slugify");
+const createDomPurify = require("dompurify");
 const { JSDOM } = require("jsdom");
 const dompurify = createDomPurify(new JSDOM().window);
 
@@ -33,7 +33,6 @@ const articleSchema = new mongoose.Schema({
   },
 });
 
-// Function ran before Schema is created.
 articleSchema.pre("validate", function (next) {
   if (this.title) {
     this.slug = slugify(this.title, { lower: true, strict: true });
@@ -43,7 +42,6 @@ articleSchema.pre("validate", function (next) {
     this.sanitisedHTML = dompurify.sanitize(marked.parse(this.content));
   }
 
-  // Run next middleware.
   next();
 });
 

@@ -30,12 +30,8 @@ body {
   align-items: center;
   background-color: var(--BGprimaryLight);
   color: var(--Textlight);
+  gap: 20px;
   transition: all 0.2s;
-}
-
-footer {
-  position: fixed;
-  bottom: 0;
 }
 
 /*-----------
@@ -92,6 +88,7 @@ footer {
   align-items: center;
   background-color: var(--BGprimaryLight);
   color: var(--Textlight);
+  border: 1px solid var(--BGprimaryDark);
   box-shadow: var(--Boxshadow);
 }
 
@@ -146,7 +143,7 @@ footer {
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  gap: 5px;
+  gap: 10px;
 }
 
 #indexRecent > a {
@@ -214,11 +211,11 @@ footer {
   flex-wrap: wrap;
   justify-content: flex-start;
   align-items: center;
-  gap: 10px;
+  gap: 20px;
 }
 
 #indexAllListTitle {
-  width: 32%;
+  width: max-content;
   color: var(--Textlight);
   text-decoration: none;
 }
